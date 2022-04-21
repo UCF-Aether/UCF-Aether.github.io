@@ -39,7 +39,7 @@ function App() {
                 />
             }
             headerOptions={{
-                "position": "fixed",
+                "position": "sticky",
                 "isRetracted": "smart",
             }}
             footer={
@@ -67,9 +67,12 @@ function App() {
             <GlHero
                 title="Hero title"
                 subTitle="Hero subtitle"
-                imageSrc="https://user-images.githubusercontent.com/39378411/135731749-4a723d4e-52ea-49b7-83c1-7da4db8f3f59.png"
+                illustration={{
+                    "type": "image",
+                    "imageSrc": "https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=ma",
+                }}
                 hasLinkToSectionBellow={true}
-                hasImageShadow={false}
+                hasIllustrationShadow={false}
             />
 
             <GlArticle
