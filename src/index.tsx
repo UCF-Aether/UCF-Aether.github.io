@@ -1,17 +1,15 @@
-import { render } from "react-dom";
-import { GlTemplate } from "gitlanding/GlTemplate";
-import { GlHeader } from "gitlanding/GlHeader";
-import { GlHero } from "gitlanding/GlHero";
 import { GlArticle } from "gitlanding/GlArticle";
-import { GlIllustration } from "gitlanding/GlIllustration";
-import { GlFooter } from "gitlanding/GlFooter";
-import { GlSectionDivider } from "gitlanding/GlSectionDivider";
 import { GlCards } from "gitlanding/GlCards";
 import { GlLogoCard } from "gitlanding/GlCards/GlLogoCard";
 import { GlProjectCard } from "gitlanding/GlCards/GlProjectCard";
 import { GlCheckList } from "gitlanding/GlCheckList";
-import { GlSlider } from "gitlanding/GlSlider";
-import { GlReviewSlide } from "gitlanding/GlReviewSlide";
+import { GlFooter } from "gitlanding/GlFooter";
+import { GlHeader } from "gitlanding/GlHeader";
+import { GlHero } from "gitlanding/GlHero";
+import { GlIllustration } from "gitlanding/GlIllustration";
+import { GlSectionDivider } from "gitlanding/GlSectionDivider";
+import { GlTemplate } from "gitlanding/GlTemplate";
+import { render } from "react-dom";
 
 function App() {
   return (
