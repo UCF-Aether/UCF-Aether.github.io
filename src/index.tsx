@@ -18,7 +18,7 @@ function App() {
     <GlTemplate
       header={
         <GlHeader
-          title="Header title"
+          title="Aether Sensor Network"
           links={[
             {
               label: "link 1",
@@ -65,8 +65,8 @@ function App() {
       }
     >
       <GlHero
-        title="Hero title"
-        subTitle="Hero subtitle"
+        title="Aether Sensor Network"
+        subTitle="A device to measure the AQI"
         illustration={{
           type: "image",
           imageSrc:
@@ -243,44 +243,6 @@ function App() {
         ]}
       />
 
-      <GlSectionDivider />
-
-      <GlSlider
-        title="Review slider title"
-        autoPlayTimeInterval={4}
-        slides={[
-          <GlReviewSlide
-            logoUrl="https://user-images.githubusercontent.com/39378411/135731994-29a3c46a-0d92-4ec8-954e-39bfeeb06534.png"
-            descriptionMd={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-                            nisl nec hendrerit rutrum, 
-                            mi enim semper arcu, ut imperdiet urna libero non metus. 
-                            Donec imperdiet ac nulla sit amet lacinia. 
-                            Suspendisse volutpat lectus vitae libero luctus, a egestas magna egestas. 
-                            Suspendisse potenti. In semper erat scelerisque sapien convallis porttitor.`}
-            signature="Signature"
-          />,
-          <GlReviewSlide
-            logoUrl="https://user-images.githubusercontent.com/39378411/135731995-136d4baf-58a6-4cb3-a72c-b8ddce835b3c.png"
-            descriptionMd={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-                            nisl nec hendrerit rutrum, 
-                            mi enim semper arcu, ut imperdiet urna libero non metus. 
-                            Donec imperdiet ac nulla sit amet lacinia. 
-                            Suspendisse volutpat lectus vitae libero luctus, a egestas magna egestas. 
-                            Suspendisse potenti. In semper erat scelerisque sapien convallis porttitor.`}
-            signature="Signature"
-          />,
-          <GlReviewSlide
-            logoUrl="https://user-images.githubusercontent.com/39378411/135731999-a2d8f901-3d7d-40a9-b59f-102ee1facc45.png"
-            descriptionMd={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-                            nisl nec hendrerit rutrum, 
-                            mi enim semper arcu, ut imperdiet urna libero non metus. 
-                            Donec imperdiet ac nulla sit amet lacinia. 
-                            Suspendisse volutpat lectus vitae libero luctus, a egestas magna egestas. 
-                            Suspendisse potenti. In semper erat scelerisque sapien convallis porttitor.`}
-            signature="Signature"
-          />,
-        ]}
-      />
     </GlTemplate>
   );
 }
