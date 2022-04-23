@@ -1,2 +1,0 @@
-(this["webpackJsonpucf-aether.github.io"]=this["webpackJsonpucf-aether.github.io"]||[]).push([[18],{618:function(e,t,a){"use strict";function i(e){e.languages.brainfuck={pointer:{pattern:/<|>/,alias:"keyword"},increment:{pattern:/\+/,alias:"inserted"},decrement:{pattern:/-/,alias:"deleted"},branching:{pattern:/\[|\]/,alias:"important"},operator:/[.,]/,comment:/\S+/}}e.exports=i,i.displayName="brainfuck",i.aliases=[]}}]);
-//# sourceMappingURL=react-syntax-highlighter_languages_refractor_brainfuck.23aac746.chunk.js.map
