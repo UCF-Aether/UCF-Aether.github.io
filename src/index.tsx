@@ -11,16 +11,8 @@ import { GlSectionDivider } from "gitlanding/GlSectionDivider";
 import { GlTemplate } from "gitlanding/GlTemplate";
 import { GlYoutubeVideoSection } from "gitlanding/GlYoutubeVideoSection";
 import { render } from "react-dom";
-
-// Images
-import aetherNodePng from "./img/aether_node_1.png";
-import aetherNodeOpen from "./img/aetherOpenedUp.jpeg";
-
-// People
-import paulImg from "./img/paul.jpg"
-import parkeImg from "./img/parke.jpg"
-import ianImg from "./img/ian.jpg"
-import randyImg from "./img/randy.jpg"
+import { MarkdownCard } from "./MarkdownCard";
+import { PersonCard } from "./PersonCard";
 
 function App() {
   return (
@@ -82,7 +74,7 @@ function App() {
         subTitle="The Spring 2022 UCF CECS Senior Design Showcase winner, a LoRaWAN-enabled air quality sensor that measures and calculates the EPA Air Quality Index (AQI)."
         illustration={{
           type: "image",
-          imageSrc: aetherNodePng,
+          imageSrc: "img/aether_node_1.png",
         }}
         hasLinkToSectionBellow={true}
         hasIllustrationShadow={false}
@@ -134,7 +126,7 @@ function App() {
           <GlIllustration
             hasShadow={false}
             type="image"
-            url={aetherNodeOpen}
+            url="img/aetherOpenedUp.jpg"
           />
         }
         hasAnimation={true}
@@ -245,25 +237,39 @@ function App() {
         title="The Team"
       >
         <>
-          <GlProjectCard
+          <PersonCard
             title="Paul Wood"
-            subtitle="Project Card Subtitle"
-            projectImageUrl={paulImg}
+            subtitle="BSCpE"
+            projectImageUrl="img/paul.jpg"
+            social={{
+              github: "plmwd",
+              linkedin: "plmwd",
+            }}
           />
-          <GlProjectCard
+          <PersonCard
             title="Ian Wallace"
-            subtitle="Project Card Subtitle"
-            projectImageUrl={ianImg}
+            subtitle="BSCpE"
+            projectImageUrl="img/ian.jpg"
+            social={{
+              linkedin: "ian-wallace-539261197",
+              github: "ianw2560",
+            }}
           />
-          <GlProjectCard
+          <PersonCard
             title="Randy Alvarez"
-            subtitle="Project Card Subtitle"
-            projectImageUrl={randyImg}
+            subtitle="BSEE"
+            projectImageUrl="img/randy.jpg"
+            social={{
+              linkedin: "alvarezrandy129",
+            }}
           />
-          <GlProjectCard
+          <PersonCard
             title="Parke Benjamin"
-            subtitle="Project Card Subtitle"
-            projectImageUrl={parkeImg}
+            subtitle="BSEE"
+            projectImageUrl="img/parke.jpg"
+            social={{
+              linkedin: "parke-benjamin-443768172",
+            }}
           />
         </>
       </GlCards>
@@ -273,61 +279,64 @@ function App() {
       >
         {
           <>
-            <GlLogoCard
+            <MarkdownCard
               title="Conference Paper"
-              // paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-              //                   nisl nec hendrerit rutrum, 
-              //                   mi enim semper arcu, ut imperdiet urna libero non metus.`}
               buttonLabel="Download"
+              link={{ 
+                href: "docs/Conference_Paper_g41.pdf"
+              }}
             />
-            <GlLogoCard
+            <MarkdownCard
               title="Final Report"
-              // paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-              //                   nisl nec hendrerit rutrum, 
-              //                   mi enim semper arcu, ut imperdiet urna libero non metus.`}
               buttonLabel="Download"
+              link={{ 
+                href: "docs/Final_Report_g41.pdf"
+              }}
             />
 
-            <GlLogoCard
+            <MarkdownCard
               title="Final Presentation"
-              // paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-              //                   nisl nec hendrerit rutrum, 
-              //                   mi enim semper arcu, ut imperdiet urna libero non metus.`}
               buttonLabel="Download"
-              overlapIcons={true}
+              link={{ 
+                href: "docs/Final_Presentation_g41.pptx"
+              }}
             />
-            <GlLogoCard
+            <MarkdownCard
+              title="Schematic"
+              buttonLabel="Download"
+              link={{ 
+                href: "docs/Schematic_g41.pdf"
+              }}
+            />
+            <MarkdownCard
               title="CDR Presentation"
-              // paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-              //                   nisl nec hendrerit rutrum, 
-              //                   mi enim semper arcu, ut imperdiet urna libero non metus.`}
               buttonLabel="Download"
+              link={{ 
+                href: "docs/CDR_Presentation_g41.pdf"
+              }}
             />
-            <GlLogoCard
+            <MarkdownCard
               title="SD1 Final Report"
-              // paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-              //                   nisl nec hendrerit rutrum, 
-              //                   mi enim semper arcu, ut imperdiet urna libero non metus.`}
               buttonLabel="Download"
+              link={{ 
+                href: "docs/Senior_Design_1_Final_Report_g41.pdf"
+              }}
             />
 
-            <GlLogoCard
+            <MarkdownCard
               title="Divide and Conquer (V2)"
-              // //paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-              //                   nisl nec hendrerit rutrum, 
-              //                   mi enim semper arcu, ut imperdiet urna libero non metus.`}
               buttonLabel="Download"
-              overlapIcons={true}
+              link={{ 
+                href: "docs/Divide_and_Conquer_v2_g41.pdf"
+              }}
             />
-            <GlLogoCard
+            <MarkdownCard
               title="Divide and Conquer (V1)"
-              // //paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-              //                   nisl nec hendrerit rutrum, 
-              //                   mi enim semper arcu, ut imperdiet urna libero non metus.`}
               buttonLabel="Download"
-              overlapIcons={true}
+              link={{ 
+                href: "docs/Divide_and_Conquer_v1_g41.pdf"
+              }}
             />
-
           </>
         }
       </GlCards>
@@ -337,28 +346,67 @@ function App() {
       >
         {
           <>
-            <GlLogoCard
+            <MarkdownCard
               title="Firmware"
-              paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-                                nisl nec hendrerit rutrum, 
-                                mi enim semper arcu, ut imperdiet urna libero non metus.`}
-              buttonLabel="View"
+              github="ucf-aether/aether-firmware"
+              buttonLabel="Download"
+              link={{ 
+                href: "src/firmware.zip"
+              }}
             />
-            <GlLogoCard
+            <MarkdownCard
               title="Web Application"
-              paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-                                nisl nec hendrerit rutrum, 
-                                mi enim semper arcu, ut imperdiet urna libero non metus.`}
-              buttonLabel="View"
+              github="ucf-aether/aether-app"
+              buttonLabel="Download"
+              link={{ 
+                href: "src/app.zip"
+              }}
             />
-
-            <GlLogoCard
+            <MarkdownCard
               title="Schematic & PCB"
-              paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-                                nisl nec hendrerit rutrum, 
-                                mi enim semper arcu, ut imperdiet urna libero non metus.`}
-              buttonLabel="View"
-              overlapIcons={true}
+              github="ucf-aether/electronics"
+              buttonLabel="Download"
+              link={{ 
+                href: "src/electronics.zip"
+              }}
+            />
+            <MarkdownCard
+              title="Final Report"
+              github="ucf-aether/report"
+              buttonLabel="Download"
+              link={{ 
+                href: "src/Final_Report_g41.zip"
+              }}
+            />
+            <MarkdownCard
+              title="Conference Paper"
+              github="ucf-aether/conference-paper"
+              buttonLabel="Download"
+              link={{ 
+                href: "src/Conference_Paper_g41.zip"
+              }}
+            />
+            <MarkdownCard
+              title="SD1 Final Report"
+              github="ucf-aether/report/tree/vSD1"
+              buttonLabel="Download"
+              link={{ 
+                href: "src/Senior_Design_1_Final_Report_g41.zip"
+              }}
+            />
+            <MarkdownCard
+              title="Divide and Conquer (V2)"
+              buttonLabel="Download"
+              link={{ 
+                href: "src/Divide_and_Conquer_v2_g41.zip"
+              }}
+            />
+            <MarkdownCard
+              title="Divide and Conquer (V1)"
+              buttonLabel="Download"
+              link={{ 
+                href: "src/Divide_and_Conquer_v1_g41.zip"
+              }}
             />
           </>
         }
