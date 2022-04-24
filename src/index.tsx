@@ -12,7 +12,9 @@ import { GlTemplate } from "gitlanding/GlTemplate";
 import { GlYoutubeVideoSection } from "gitlanding/GlYoutubeVideoSection";
 import { render } from "react-dom";
 
+// Images
 import aetherNodePng from "./img/aether_node_1.png";
+import aetherNodeOpen from "./img/aetherOpenedUp.jpeg";
 
 function App() {
   return (
@@ -74,19 +76,15 @@ function App() {
         subTitle="The Spring 2022 UCF CECS Senior Design Showcase winner, a LoRaWAN-enabled air quality sensor that measures and calculates the EPA Air Quality Index (AQI)."
         illustration={{
           type: "image",
-          imageSrc:
-            "https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=ma",
+          imageSrc: aetherNodePng,
         }}
         hasLinkToSectionBellow={true}
         hasIllustrationShadow={false}
       />
 
-      <GlYoutubeVideoSection
-        title="Showcase Video"
-        src="https://www.youtube.com/embed/E9gR2ITvywU"
-      />
 
-      <GlArticle
+
+      {/* <GlArticle
         id="aboutAqi"
         title="What is the AQI?"
         body={`The Air Quality Index, or AQI, is an integer number ranging from 0 through 500 with 0 being
@@ -109,7 +107,7 @@ function App() {
         }
         hasAnimation={true}
         illustrationPosition="left"
-      />
+      /> */}
 
       <GlSectionDivider />
 
@@ -130,11 +128,17 @@ function App() {
           <GlIllustration
             hasShadow={false}
             type="image"
-            url={aetherNodePng}
+            url={aetherNodeOpen}
           />
         }
         hasAnimation={true}
         illustrationPosition="right"
+      />
+
+      <GlYoutubeVideoSection
+        title="Showcase Video"
+        src="https://www.youtube.com/embed/E9gR2ITvywU"
+        hasAnimation={true}
       />
 
       <GlCards>
