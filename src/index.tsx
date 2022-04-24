@@ -9,7 +9,10 @@ import { GlHero } from "gitlanding/GlHero";
 import { GlIllustration } from "gitlanding/GlIllustration";
 import { GlSectionDivider } from "gitlanding/GlSectionDivider";
 import { GlTemplate } from "gitlanding/GlTemplate";
+import { GlYoutubeVideoSection } from "gitlanding/GlYoutubeVideoSection";
 import { render } from "react-dom";
+
+import aetherNodePng from "./img/aether_node_1.png";
 
 function App() {
   return (
@@ -78,6 +81,11 @@ function App() {
         hasIllustrationShadow={false}
       />
 
+      <GlYoutubeVideoSection
+        title="Showcase Video"
+        src="https://www.youtube.com/embed/E9gR2ITvywU"
+      />
+
       <GlArticle
         id="aboutAqi"
         title="What is the AQI?"
@@ -122,7 +130,7 @@ function App() {
           <GlIllustration
             hasShadow={false}
             type="image"
-            url="https://user-images.githubusercontent.com/39378411/135731808-6cf3e4dd-1047-4a0a-95be-65fdd6947315.png"
+            url={aetherNodePng}
           />
         }
         hasAnimation={true}
@@ -324,14 +332,14 @@ function App() {
               paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
                                 nisl nec hendrerit rutrum, 
                                 mi enim semper arcu, ut imperdiet urna libero non metus.`}
-              buttonLabel="Download"
+              buttonLabel="View"
             />
             <GlLogoCard
               title="Web Application"
               paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
                                 nisl nec hendrerit rutrum, 
                                 mi enim semper arcu, ut imperdiet urna libero non metus.`}
-              buttonLabel="Download"
+              buttonLabel="View"
             />
 
             <GlLogoCard
@@ -339,7 +347,7 @@ function App() {
               paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
                                 nisl nec hendrerit rutrum, 
                                 mi enim semper arcu, ut imperdiet urna libero non metus.`}
-              buttonLabel="Download"
+              buttonLabel="View"
               overlapIcons={true}
             />
           </>
