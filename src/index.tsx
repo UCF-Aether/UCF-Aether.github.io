@@ -145,7 +145,7 @@ function App() {
             <GlLogoCard
               title="Designed in KiCad"
               iconUrls={[
-                "kicad.png",  
+                "img/kicad.png",  
               ]}
               paragraph={`The Aether schematic PCB was designed in KiCad 6. KiCad provides an extensive 
               part library which minimized the development of part footprints. Using KiCad allowed us 
@@ -155,7 +155,7 @@ function App() {
             <GlLogoCard
               title="Powered by Zephyr RTOS"
               iconUrls={[
-                "zephyr.png",  
+                "img/zephyr.png",  
               ]}
               paragraph={`Zephyr RTOS is an open, collaborative, vendor-neutral RTOS hosted under the
               Linux Foundation. Zephyr uses the Linux device tree and Kconfig specification for Generalizing
@@ -168,8 +168,8 @@ function App() {
             <GlLogoCard
               title="Accessible through AWS & Supabase"
               iconUrls={[
-                "aws.svg",  
-                "supabase.svg",  
+                "img/aws.svg",  
+                "img/supabase.svg",  
               ]}
               paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
                                 nisl nec hendrerit rutrum, 
