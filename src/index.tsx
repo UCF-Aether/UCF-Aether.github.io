@@ -94,7 +94,7 @@ function App() {
         }}
         illustration={
           <GlIllustration
-            hasShadow={false}
+            hasShadow={true}
             type="image"
             url="aqi.png"
           />
