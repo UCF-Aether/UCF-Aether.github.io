@@ -257,59 +257,59 @@ function App() {
           <>
             <GlLogoCard
               title="Conference Paper"
-              paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-                                nisl nec hendrerit rutrum, 
-                                mi enim semper arcu, ut imperdiet urna libero non metus.`}
+              // paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
+              //                   nisl nec hendrerit rutrum, 
+              //                   mi enim semper arcu, ut imperdiet urna libero non metus.`}
               buttonLabel="Download"
             />
             <GlLogoCard
-              title="Report"
-              paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-                                nisl nec hendrerit rutrum, 
-                                mi enim semper arcu, ut imperdiet urna libero non metus.`}
+              title="Final Report"
+              // paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
+              //                   nisl nec hendrerit rutrum, 
+              //                   mi enim semper arcu, ut imperdiet urna libero non metus.`}
               buttonLabel="Download"
             />
 
             <GlLogoCard
-              title="Presentation"
-              paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-                                nisl nec hendrerit rutrum, 
-                                mi enim semper arcu, ut imperdiet urna libero non metus.`}
+              title="Final Presentation"
+              // paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
+              //                   nisl nec hendrerit rutrum, 
+              //                   mi enim semper arcu, ut imperdiet urna libero non metus.`}
               buttonLabel="Download"
               overlapIcons={true}
             />
-          </>
-        }
-      </GlCards>
-
-      <GlCards
-        title="Senior Design 1 Project Documentation"
-      >
-        {
-          <>
             <GlLogoCard
-              title="CDR"
-              paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-                                nisl nec hendrerit rutrum, 
-                                mi enim semper arcu, ut imperdiet urna libero non metus.`}
+              title="CDR Presentation"
+              // paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
+              //                   nisl nec hendrerit rutrum, 
+              //                   mi enim semper arcu, ut imperdiet urna libero non metus.`}
               buttonLabel="Download"
             />
             <GlLogoCard
-              title="Report"
-              paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-                                nisl nec hendrerit rutrum, 
-                                mi enim semper arcu, ut imperdiet urna libero non metus.`}
+              title="SD1 Final Report"
+              // paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
+              //                   nisl nec hendrerit rutrum, 
+              //                   mi enim semper arcu, ut imperdiet urna libero non metus.`}
               buttonLabel="Download"
             />
 
             <GlLogoCard
-              title="Project Report (SD1 Version)"
-              paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-                                nisl nec hendrerit rutrum, 
-                                mi enim semper arcu, ut imperdiet urna libero non metus.`}
+              title="Divide and Conquer (V2)"
+              // //paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
+              //                   nisl nec hendrerit rutrum, 
+              //                   mi enim semper arcu, ut imperdiet urna libero non metus.`}
               buttonLabel="Download"
               overlapIcons={true}
             />
+            <GlLogoCard
+              title="Divide and Conquer (V1)"
+              // //paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
+              //                   nisl nec hendrerit rutrum, 
+              //                   mi enim semper arcu, ut imperdiet urna libero non metus.`}
+              buttonLabel="Download"
+              overlapIcons={true}
+            />
+
           </>
         }
       </GlCards>
