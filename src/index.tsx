@@ -16,6 +16,12 @@ import { render } from "react-dom";
 import aetherNodePng from "./img/aether_node_1.png";
 import aetherNodeOpen from "./img/aetherOpenedUp.jpeg";
 
+// People
+import paulImg from "./img/paul.JPG"
+import parkeImg from "./img/parke.JPG"
+import ianImg from "./img/ian.JPG"
+import randyImg from "./img/randy.JPG"
+
 function App() {
   return (
     <GlTemplate
@@ -242,22 +248,22 @@ function App() {
           <GlProjectCard
             title="Paul Wood"
             subtitle="Project Card Subtitle"
-            projectImageUrl="https://user-images.githubusercontent.com/39378411/135731821-0f1c7165-fada-418f-896a-c36a0e55171b.png"
+            projectImageUrl={paulImg}
           />
           <GlProjectCard
             title="Ian Wallace"
             subtitle="Project Card Subtitle"
-            projectImageUrl="https://user-images.githubusercontent.com/39378411/135731810-93193eba-ada5-460a-96ad-948215278850.png"
+            projectImageUrl={ianImg}
           />
           <GlProjectCard
             title="Randy Alvarez"
             subtitle="Project Card Subtitle"
-            projectImageUrl="https://user-images.githubusercontent.com/39378411/135731819-1cf18697-e946-449f-ad6e-be414e341c40.png"
+            projectImageUrl={randyImg}
           />
           <GlProjectCard
             title="Parke Benjamin"
             subtitle="Project Card Subtitle"
-            projectImageUrl="https://user-images.githubusercontent.com/39378411/135731914-0265b77e-3338-4747-b014-e845f16332a7.png"
+            projectImageUrl={parkeImg}
           />
         </>
       </GlCards>
