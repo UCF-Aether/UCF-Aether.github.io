@@ -17,10 +17,10 @@ import aetherNodePng from "./img/aether_node_1.png";
 import aetherNodeOpen from "./img/aetherOpenedUp.jpeg";
 
 // People
-import paulImg from "./img/paul.JPG"
-import parkeImg from "./img/parke.JPG"
-import ianImg from "./img/ian.JPG"
-import randyImg from "./img/randy.JPG"
+import paulImg from "./img/paul.jpg"
+import parkeImg from "./img/parke.jpg"
+import ianImg from "./img/ian.jpg"
+import randyImg from "./img/randy.jpg"
 
 function App() {
   return (
