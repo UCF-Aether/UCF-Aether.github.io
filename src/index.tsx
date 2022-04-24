@@ -81,12 +81,13 @@ function App() {
       <GlArticle
         id="aboutAqi"
         title="What is the AQI?"
-        body={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-                    nisl nec hendrerit rutrum, 
-                    mi enim **semper arcu**, ut imperdiet urna libero non metus. 
-                    Donec imperdiet ac nulla sit amet lacinia. 
-                    Suspendisse volutpat lectus vitae libero luctus, a egestas magna egestas. 
-                    Suspendisse potenti. In semper erat scelerisque sapien convallis porttitor.`}
+        body={`The Air Quality Index, or AQI, is an integer number ranging from 0 through 500 with 0 being
+          the best air quality and 500 being the worst. The AQI was established by the EPA and based
+          off standards for five main pollutants, ozone, particulate matter, nitrogen dioxide, carbon monoxide,
+          and sodium dioxide, defined in standards set by the Clean Air Act. The AQI is calculated for
+          each pollutant, and the maximum is taken as the reported AQI. The AQI is split into discrete
+          ranges with advisory messages for each category, as shown on the left.
+        `}
         buttonLabel="Learn More"
         buttonLink={{
           href: "https://www.airnow.gov",
@@ -95,7 +96,7 @@ function App() {
           <GlIllustration
             hasShadow={false}
             type="image"
-            url="https://user-images.githubusercontent.com/39378411/135731808-6cf3e4dd-1047-4a0a-95be-65fdd6947315.png"
+            url="aqi.png"
           />
         }
         hasAnimation={true}
@@ -133,26 +134,31 @@ function App() {
           <>
             <GlLogoCard
               title="Designed in KiCad"
-              paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-                                nisl nec hendrerit rutrum, 
-                                mi enim semper arcu, ut imperdiet urna libero non metus.`}
-              buttonLabel="Button Label"
+              iconUrls={[
+                "kicad.png",  
+              ]}
+              paragraph={`The Aether schematic PCB was designed in KiCad 6.`}
             />
             <GlLogoCard
               title="Powered by Zephyr RTOS"
+              iconUrls={[
+                "zephyr.png",  
+              ]}
               paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
                                 nisl nec hendrerit rutrum, 
                                 mi enim semper arcu, ut imperdiet urna libero non metus.`}
-              buttonLabel="Button Label"
             />
 
             <GlLogoCard
               title="Accessible by AWS & Supabase"
+              iconUrls={[
+                "aws.svg",  
+                "supabase.svg",  
+              ]}
               paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
                                 nisl nec hendrerit rutrum, 
                                 mi enim semper arcu, ut imperdiet urna libero non metus.`}
-              buttonLabel="Button Label"
-              overlapIcons={true}
+              overlapIcons={false}
             />
           </>
         }
