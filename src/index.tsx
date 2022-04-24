@@ -137,20 +137,26 @@ function App() {
               iconUrls={[
                 "kicad.png",  
               ]}
-              paragraph={`The Aether schematic PCB was designed in KiCad 6.`}
+              paragraph={`The Aether schematic PCB was designed in KiCad 6. KiCad provides an extensive 
+              part library which minimized the development of part footprints. Using KiCad allowed us 
+              to version control our hardware design which allowed us to revert mistakes and easily 
+              share work with the team.`}
             />
             <GlLogoCard
               title="Powered by Zephyr RTOS"
               iconUrls={[
                 "zephyr.png",  
               ]}
-              paragraph={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, 
-                                nisl nec hendrerit rutrum, 
-                                mi enim semper arcu, ut imperdiet urna libero non metus.`}
+              paragraph={`Zephyr RTOS is an open, collaborative, vendor-neutral RTOS hosted under the
+              Linux Foundation. Zephyr uses the Linux device tree and Kconfig specification for Generalizing
+              drivers to work across architectures and boards. We were able to create a Aether specific 
+              device tree specification (DTS) file and DT-overlay for working on our development board 
+              while keeping the firmware exactly the same. This allowed us to easily migrate to our 
+              PCB later in development with no issues.`}
             />
 
             <GlLogoCard
-              title="Accessible by AWS & Supabase"
+              title="Accessible through AWS & Supabase"
               iconUrls={[
                 "aws.svg",  
                 "supabase.svg",  
