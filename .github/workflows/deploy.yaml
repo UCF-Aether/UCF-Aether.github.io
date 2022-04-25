@@ -6,6 +6,8 @@ on:
 jobs:
 
   deploy_on_gh_pages:
+    env: 
+      CI: false # We don't do that here
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
