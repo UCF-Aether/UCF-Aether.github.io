@@ -82,7 +82,7 @@ function App() {
         title="A LoRaWAN connected air quality sensor"
         subTitle="Winner of the Spring 2022 UCF CECS Senior Design Showcase Best ECE Project Award"
         classes={{
-          imageWrapper: css({ width: "100%" })
+          imageWrapper: css({ width: "100%" }),
         }}
         illustration={{
           type: "custom component",
@@ -95,14 +95,18 @@ function App() {
                 <Carousel>
                   {[
                     "img/aether-sunset.gif",
-                    "img/aether_node_1.png", 
-                    "img/aetherOpenedUp.jpg"
+                    "img/aether_node_1.png",
+                    "img/aetherOpenedUp.jpg",
                   ].map((src, i) => (
                     <img
                       src={src}
                       width="100%"
                       height="auto"
-                      style={{ width: "100%", maxWidth: 600, objectFit: "contain" }}
+                      style={{
+                        width: "100%",
+                        maxWidth: 600,
+                        objectFit: "contain",
+                      }}
                       // Wait for the first image to load
                       onLoad={i === 0 ? onLoad : undefined}
                     />
@@ -181,7 +185,15 @@ function App() {
               link={{
                 href: "https://www.kicad.org",
               }}
-              iconUrls={["img/kicad.png"]}
+              classes={{
+                icon: css({
+                  width: 70,
+                  "& svg": {
+                    width: 70,
+                  },
+                }),
+              }}
+              iconUrls={["img/kicad.svg"]}
               paragraph={`The Aether schematic PCB was designed in KiCad 6. KiCad provides an extensive 
               part library which minimized the development of part footprints. Using KiCad allowed us 
               to version control our hardware design which allowed us to revert mistakes and easily 
@@ -192,6 +204,14 @@ function App() {
               iconUrls={["img/zephyr.png"]}
               link={{
                 href: "https://www.zephyrproject.org",
+              }}
+              classes={{
+                icon: css({
+                  width: 70,
+                  "& svg": {
+                    width: 70,
+                  },
+                }),
               }}
               paragraph={`Zephyr RTOS is an open, collaborative, vendor-neutral RTOS hosted under the
               Linux Foundation. Zephyr uses the Linux device tree and Kconfig specification for Generalizing
