@@ -1,6 +1,7 @@
 import { useTheme, breakpointsValues } from "gitlanding/theme";
 import { GlYoutubeVideoSection } from "gitlanding/GlYoutubeVideoSection";
 import { Stack } from "@mui/material";
+import { css } from "gitlanding";
 
 export interface VideoStackProps {
   videos: {
@@ -13,26 +14,21 @@ export const VideoStack = (props: VideoStackProps) => {
   const theme = useTheme();
 
   const { videos } = props;
-  let width: number | string = "100%";
+  let width: number | string = "90%";
   let height: number | string | undefined = undefined;
 
-  if (theme.windowInnerWidth >= breakpointsValues["lg+"]) {
+  if (theme.windowInnerWidth >= breakpointsValues["md"]) {
     width = 0.9 * theme.windowInnerWidth / videos.length;
     height = width / 100 * 60;
   }
-  else if (theme.windowInnerWidth >= breakpointsValues.lg) {
-    width = 600;
-  }
-  else if (theme.windowInnerWidth >= breakpointsValues.md) {
-    width = 500;
-  }
   else if (theme.windowInnerWidth >= breakpointsValues.sm) {
     width = 500;
+    height = width / 100 * 60;
   }
 
   return (
     <Stack
-      direction={{ xs: "column", md: "column", lg: "row" }}
+      direction={{ xs: "column", md: "row", lg: "row" }}
       spacing={0}
       alignSelf="center"
       justifyContent="center"
@@ -45,6 +41,11 @@ export const VideoStack = (props: VideoStackProps) => {
           hasAnimation={true}
           width={width}
           height={height}
+          classes={{
+            root: css({
+              padding: 10
+            })
+          }}
         />
       ))}
     </Stack>
