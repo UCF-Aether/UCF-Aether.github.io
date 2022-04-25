@@ -66,7 +66,7 @@ function App() {
     >
       <GlHero
         title="A LoRaWAN-enabled air quality sensor"
-        subTitle="The Spring 2022 UCF CECS Senior Design Showcase winner"
+        subTitle="Winner of the Spring 2022 UCF CECS Senior Design Showcase Best ECE Project Award"
         illustration={{
           type: "image",
           imageSrc: "img/aether_node_1.png",
@@ -104,15 +104,13 @@ function App() {
 
       <GlArticle
         id="aboutAether"
-        title="What is Aether?"
-        body={`Aether is a low-power air quality monitoring device and web application that measures 
-          and calculates the EPA Air Quality Index (AQI). The Aether Node is implemented on a 
-          four-layer PCB and housed in a 3D printed enclosure. And, the
-          computation that is performed by the Aether Node is done by a
-          Seeed LoRa-E5 LoRaWAN module. This module packages an
-          ST STM32WLE5JC, which is an SoC combing an ARM M4
-          processor and a LoRa transceiver on the same IC. Packets are sent to The Things Network where
-          they are forwarded to Supabase, our backend, which allows data to be displayed on the web application hosted on AWS.`}
+        title="Project Description"
+        body={`The Aether Sensor Network is a low-power, air quality monitoring system that is designed to measure
+          and calculate the air quality index (AQI). Aether consists of two main components: the device which collects
+          air quality data, known as the Aether Node, and a website the hosts and displays that data. The Aether Node 
+          uses two gas sensors and a particulate matter sensor to collect the data used in calculating air quality. This collected data is 
+          transmitted by the Aether Node over LoRaWAN. The Aether Node is implemented on a four-layer PCB and housed 
+          in a 3D printed enclosure.`}
         buttonLabel="Aether Webapp"
         buttonLink={{
           href: "https://aethersensor.network",
