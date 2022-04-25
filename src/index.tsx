@@ -1,4 +1,5 @@
-import { Box, IconButton, Stack } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import { IconButton } from "@mui/material";
 import { GlArticle } from "gitlanding/GlArticle";
 import { GlCards } from "gitlanding/GlCards";
 import { GlLogoCard } from "gitlanding/GlCards/GlLogoCard";
@@ -11,14 +12,10 @@ import { GlSectionDivider } from "gitlanding/GlSectionDivider";
 import { GlTemplate } from "gitlanding/GlTemplate";
 import { GlYoutubeVideoSection } from "gitlanding/GlYoutubeVideoSection";
 import { render } from "react-dom";
+import Carousel from "react-material-ui-carousel";
 import { MarkdownCard } from "./MarkdownCard";
 import { PersonCard } from "./PersonCard";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import { useTheme } from "gitlanding/theme";
 import { VideoStack } from "./VideoStack";
-import Carousel from "react-material-ui-carousel";
-import { GlImage } from "gitlanding/utils/GlImage";
-import { useEffect } from "react";
 
 function App() {
   return (

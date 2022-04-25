@@ -1,6 +1,6 @@
+import { makeStyles } from "gitlanding/theme";
 import type { ReactNode } from "react";
 import { memo } from "react";
-import { makeStyles } from "gitlanding/theme";
 
 export type GlCardProps = {
     className?: string;

@@ -1,17 +1,20 @@
 /* eslint-disable @typescript-eslint/no-namespace */
-import { memo, useEffect, useState } from "react";
-import { GlButton } from "gitlanding/utils/GlButton";
-import { makeStyles, Text } from "gitlanding/theme";
-import type { GlCardProps } from "gitlanding/GlCards/GlCard";
-import { breakpointsValues } from "gitlanding/theme";
-import { Stack } from "@mui/material";
-import { Card } from "./Card";
-import { IconButton } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { IconButton, Stack, Typography } from "@mui/material";
+import type { GlCardProps } from "gitlanding/GlCards/GlCard";
+import { breakpointsValues, makeStyles, Text } from "gitlanding/theme";
 import { Markdown } from "gitlanding/tools/Markdown";
-
+import { GlButton } from "gitlanding/utils/GlButton";
+import {
+    bindHover,
+    bindPopover,
+    usePopupState
+} from "material-ui-popup-state/hooks";
+import HoverPopover from "material-ui-popup-state/HoverPopover";
 import { useDomRect } from "powerhooks/useDomRect";
+import { memo, useEffect, useState } from "react";
+import { Card } from "./Card";
 
 export type GlProjectCardProps = GlCardProps & {
   projectImageUrl: string;
@@ -73,6 +76,16 @@ export const PersonCard = memo((props: GlProjectCardProps) => {
     { props }
   );
 
+  const githubPopupState = usePopupState({
+    variant: "popper",
+    popupId: "githubPopper",
+  });
+
+  const linkedinPopupState = usePopupState({
+    variant: "popper",
+    popupId: "githubPopper",
+  });
+
   return (
     <Card className={cx(classes.root, className)}>
       <div ref={headerRef} className={classes.header}>
@@ -93,28 +106,68 @@ export const PersonCard = memo((props: GlProjectCardProps) => {
           <Text typo="object heading" className={classes.footerTitle}>
             {name}
           </Text>
-          <div>
+          <div style={{ display: "flex" }}>
             {social?.github && (
-              <IconButton href={"https://github.com/" + social.github} color="inherit" sx={{ py: 0 }}>
-                <GitHubIcon />
-              </IconButton>
+              <div>
+                <IconButton
+                  href={"https://github.com/" + social.github}
+                  color="inherit"
+                  sx={{ py: 0 }}
+                  {...bindHover(githubPopupState)}
+                >
+                  <GitHubIcon />
+                </IconButton>
+                <HoverPopover
+                  {...bindPopover(githubPopupState)}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "center",
+                  }}
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "center",
+                  }}
+                >
+                  <Typography style={{ margin: 10 }}>
+                    View GitHub Profile
+                  </Typography>
+                </HoverPopover>
+              </div>
             )}
             {social?.linkedin && (
-              <IconButton href={"https://www.linkedin.com/in/" + social.linkedin} color="inherit" sx={{ py: 0 }}>
-                <LinkedInIcon />
-              </IconButton>
+              <div>
+                <IconButton
+                  href={"https://www.linkedin.com/in/" + social.linkedin}
+                  color="inherit"
+                  sx={{ py: 0 }}
+              {...bindHover(linkedinPopupState)}
+                >
+                  <LinkedInIcon />
+                </IconButton>
+                <HoverPopover
+                  {...bindPopover(linkedinPopupState)}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "center",
+                  }}
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "center",
+                  }}
+                >
+                  <Typography style={{ margin: 10 }}>
+                    View LinkedIn Profile
+                  </Typography>
+                </HoverPopover>
+              </div>
             )}
           </div>
         </Stack>
         {subtitle !== undefined && (
-          <Markdown className={classes.footerSubtitle}>
-            {subtitle}
-          </Markdown>
+          <Markdown className={classes.footerSubtitle}>{subtitle}</Markdown>
         )}
         {text !== undefined && (
-          <Markdown className={classes.footerText}>
-            {text}
-          </Markdown>
+          <Markdown className={classes.footerText}>{text}</Markdown>
         )}
       </div>
     </Card>

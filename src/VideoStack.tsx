@@ -1,7 +1,7 @@
-import { useTheme, breakpointsValues } from "gitlanding/theme";
-import { GlYoutubeVideoSection } from "gitlanding/GlYoutubeVideoSection";
 import { Stack } from "@mui/material";
 import { css } from "gitlanding";
+import { GlYoutubeVideoSection } from "gitlanding/GlYoutubeVideoSection";
+import { breakpointsValues, useTheme } from "gitlanding/theme";
 
 export interface VideoStackProps {
   videos: {

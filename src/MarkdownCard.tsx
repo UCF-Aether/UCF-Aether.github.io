@@ -1,23 +1,19 @@
 /* eslint-disable @typescript-eslint/no-namespace */
-import { memo } from "react";
-import { makeStyles, Text } from "gitlanding/theme";
-import { GlLogo } from "gitlanding/utils/GlLogo";
-import { GlCard } from "gitlanding/GlCards/GlCard";
-import type { GlCardProps } from "gitlanding/GlCards/GlCard";
-import { breakpointsValues } from "gitlanding/theme";
-import { GlButton } from "gitlanding/utils/GlButton";
-import { Markdown } from "gitlanding/tools/Markdown";
-import { Stack, IconButton } from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import CodeIcon from "@mui/icons-material/Code";
-import HoverPopover from "material-ui-popup-state/HoverPopover";
-import { Popper, Paper, Typography } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import { IconButton, Stack, Typography } from "@mui/material";
+import type { GlCardProps } from "gitlanding/GlCards/GlCard";
+import { GlCard } from "gitlanding/GlCards/GlCard";
+import { breakpointsValues, makeStyles, Text } from "gitlanding/theme";
+import { Markdown } from "gitlanding/tools/Markdown";
+import { GlButton } from "gitlanding/utils/GlButton";
+import { GlLogo } from "gitlanding/utils/GlLogo";
 import {
-  usePopupState,
-  bindHover,
-  bindPopover,
-  bindPopper,
+    bindHover,
+    bindPopover, usePopupState
 } from "material-ui-popup-state/hooks";
+import HoverPopover from "material-ui-popup-state/HoverPopover";
+import { memo } from "react";
 
 export type MarkdownCardProps = GlCardProps & {
   iconUrls?: string[];
