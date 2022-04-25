@@ -30,7 +30,6 @@ export const VideoStack = (props: VideoStackProps) => {
     width = 500;
   }
 
-console.log(theme.windowInnerWidth, breakpointsValues, width);
   return (
     <Stack
       direction={{ xs: "column", md: "column", lg: "row" }}
