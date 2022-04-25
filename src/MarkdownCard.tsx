@@ -9,6 +9,15 @@ import { GlButton } from "gitlanding/utils/GlButton";
 import { Markdown } from "gitlanding/tools/Markdown";
 import { Stack, IconButton } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import CodeIcon from "@mui/icons-material/Code";
+import HoverPopover from "material-ui-popup-state/HoverPopover";
+import { Popper, Paper, Typography } from "@mui/material";
+import {
+  usePopupState,
+  bindHover,
+  bindPopover,
+  bindPopper,
+} from "material-ui-popup-state/hooks";
 
 export type MarkdownCardProps = GlCardProps & {
   iconUrls?: string[];
@@ -17,6 +26,8 @@ export type MarkdownCardProps = GlCardProps & {
   buttonLabel?: string;
   overlapIcons?: boolean;
   github?: string;
+  source?: string;
+  sourcePopup?: string;
   classes?: Partial<ReturnType<typeof useStyles>["classes"]>;
 };
 
@@ -30,6 +41,8 @@ export const MarkdownCard = memo((props: MarkdownCardProps) => {
     overlapIcons,
     link,
     github,
+    source,
+    sourcePopup,
   } = props;
 
   const { classes, cx, css } = useStyles(
@@ -38,6 +51,16 @@ export const MarkdownCard = memo((props: MarkdownCardProps) => {
     },
     { props }
   );
+
+  const sourcePopupState = usePopupState({
+    variant: "popper",
+    popupId: "sourcePopper",
+  });
+
+  const githubPopupState = usePopupState({
+    variant: "popper",
+    popupId: "githubPopper",
+  });
 
   return (
     <GlCard link={link} className={cx(classes.root, className)}>
@@ -68,13 +91,11 @@ export const MarkdownCard = memo((props: MarkdownCardProps) => {
           </Text>
         )}
         {paragraph !== undefined && (
-          <Markdown className={classes.paragraph}>
-            {paragraph}
-          </Markdown>
+          <Markdown className={classes.paragraph}>{paragraph}</Markdown>
         )}
       </div>
 
-      <Stack direction="row">
+      <Stack direction="row" alignItems="center">
         {buttonLabel !== undefined && (
           <GlButton
             type="submit"
@@ -87,9 +108,56 @@ export const MarkdownCard = memo((props: MarkdownCardProps) => {
           </GlButton>
         )}
         {github && (
-          <IconButton href={"https://github.com/" + github} color="inherit" sx={{ py: 0, mx: 2 }}>
-            <GitHubIcon />
-          </IconButton>
+          <div>
+            <IconButton
+              href={"https://github.com/" + github}
+              color="inherit"
+              sx={{ py: 0, ml: 2, mr: 0, pr: 0 }}
+              {...bindHover(githubPopupState)}
+            >
+              <GitHubIcon />
+            </IconButton>
+            <HoverPopover
+              {...bindPopover(githubPopupState)}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "center",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "center",
+              }}
+            >
+              <Typography style={{ margin: 10 }}>View GitHub Repository</Typography>
+            </HoverPopover>
+          </div>
+        )}
+        {source && (
+          <div>
+            <IconButton
+              href={source}
+              color="inherit"
+              sx={{ py: 0, ml: 2, mr: 0, pr: 0 }}
+              {...bindHover(sourcePopupState)}
+            >
+              <CodeIcon />
+            </IconButton>
+            <HoverPopover
+              {...bindPopover(sourcePopupState)}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "center",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "center",
+              }}
+            >
+              <Typography style={{ margin: 10 }}>
+                {sourcePopup ?? "Download source"}
+              </Typography>
+            </HoverPopover>
+          </div>
         )}
       </Stack>
     </GlCard>

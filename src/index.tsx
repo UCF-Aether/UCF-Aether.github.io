@@ -1,3 +1,4 @@
+import { Box, IconButton, Stack } from "@mui/material";
 import { GlArticle } from "gitlanding/GlArticle";
 import { GlCards } from "gitlanding/GlCards";
 import { GlLogoCard } from "gitlanding/GlCards/GlLogoCard";
@@ -12,18 +13,22 @@ import { GlYoutubeVideoSection } from "gitlanding/GlYoutubeVideoSection";
 import { render } from "react-dom";
 import { MarkdownCard } from "./MarkdownCard";
 import { PersonCard } from "./PersonCard";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import { useTheme } from "gitlanding/theme";
+import { VideoStack } from "./VideoStack";
 
 function App() {
   return (
     <GlTemplate
       header={
         <GlHeader
-          title="Aether - Air Quality Sensor"
+          title="Aether Sensor Network"
+          customItemStart={
+            <IconButton href="https://github.com/ucf-aether" color="inherit">
+              <GitHubIcon /> 
+            </IconButton>   
+          }
           links={[
-            {
-              label: "GitHub",
-              href: "https://github.com/ucf-aether",
-            },
             {
               label: "Report",
               href: "docs/Final_Report_g41.pdf",
@@ -45,27 +50,35 @@ function App() {
           bottomDivContent="Licence MIT"
           links={[
             {
+              label: "GitHub",
+              href: "https://github.com/ucf-aether"
+            },
+            {
               label: "Report",
-              href: "https://github.com/ucf-aether/report",
+              href: "docs/Final_Report_g41.pdf",
+            },
+            {
+              label: "Conference Paper",
+              href: "docs/Conference_Paper_g41.pdf",
+            },
+            {
+              label: "App",
+              href: "https://github.com/ucf-aether/aether-app"
             },
             {
               label: "Firmware",
-              href: "https://github.com/ucf-aether/aether-firmware",
+              href: "https://github.com/ucf-aether/aether-firmware"
             },
             {
               label: "Electronics",
-              href: "https://github.com/ucf-aether/electronics",
-            },
-            {
-              label: "Application",
-              href: "https://github.com/ucf-aether/aether-app",
+              href: "https://github.com/ucf-aether/aether-electronics"
             },
           ]}
         />
       }
     >
       <GlHero
-        title="A LoRaWAN-enabled air quality sensor"
+        title="A LoRaWAN connected air quality sensor"
         subTitle="Winner of the Spring 2022 UCF CECS Senior Design Showcase Best ECE Project Award"
         illustration={{
           type: "image",
@@ -221,8 +234,12 @@ function App() {
       <GlCards title="The Team">
         <>
           <PersonCard
-            title="Paul Wood"
-            subtitle="BSCpE"
+            name="Paul Wood"
+            subtitle="**Web App, Firmware**"
+            text={`**Paul Wood** is currently a senior at the University of Central Florida and will 
+              graduate with a **BSCpE** in May 2022. He is 
+              pursuing roles in low-level embedded systems, and is interested in operating systems 
+              and IoT devices. He plans on pursuing a graduate degree after working for a few years.`}
             projectImageUrl="img/paul.jpg"
             social={{
               github: "plmwd",
@@ -230,8 +247,12 @@ function App() {
             }}
           />
           <PersonCard
-            title="Ian Wallace"
-            subtitle="BSCpE"
+            name="Ian Wallace"
+            subtitle="**Firmware, Enclosure**"
+            text={`**Ian Wallace** is currently a senior at the University of Central Florida and 
+              will graduate with a **BSCpE** in May 2022. He is 
+              currently interning at Lockheed Martin in Orlando, FL and is doing work in cryptography 
+              and FPGAs. He plans on continuing to work there full-time, following his graduation.`}
             projectImageUrl="img/ian.jpg"
             social={{
               linkedin: "ian-wallace-539261197",
@@ -239,16 +260,25 @@ function App() {
             }}
           />
           <PersonCard
-            title="Randy Alvarez"
-            subtitle="BSEE"
+            name="Randy Alvarez"
+            subtitle="**Schematic, PCB**"
+            text={`**Randy Alvarez** is currently a senior at the University of Central Florida and 
+              will graduate with a **BSEE** in May 2022. He 
+              is currently an intern in the CWEP program at Lockheed Martin in Orlando, FL doing 
+              work on systems testability and improvements. He plans on continuing to work there 
+              full-time, following his graduation.`}
             projectImageUrl="img/randy.jpg"
             social={{
               linkedin: "alvarezrandy129",
             }}
           />
           <PersonCard
-            title="Parke Benjamin"
-            subtitle="BSEE"
+            name="Parke Benjamin"
+            subtitle="**Schematic**"
+            text={`**Parke Benjamin** is currently a senior at the University of Central Florida and will 
+              graduate with a **BSEE** in May 2022. He is 
+              currently working at Duke Energy in Orlando, FL doing work in the protections and 
+              controls department. He plans on continuing to work there full-time, following his graduation.`}
             projectImageUrl="img/parke.jpg"
             social={{
               linkedin: "parke-benjamin-443768172",
@@ -257,17 +287,16 @@ function App() {
         </>
       </GlCards>
 
-      <GlYoutubeVideoSection
-        title="Final Presentation Video"
-        src="https://www.youtube.com/embed/uTsx15xbbo8"
-        hasAnimation={true}
-      />
-
-      <GlYoutubeVideoSection
-        title="Final Demo Video"
-        src="https://www.youtube.com/embed/MYu3QT3-u_8"
-        hasAnimation={true}
-      />
+      <VideoStack videos={[
+        {
+          title: "Final Presentation Video",
+          src: "https://www.youtube.com/embed/uTsx15xbbo8",
+        },
+        {
+          title: "Final Demo Video",
+          src: "https://www.youtube.com/embed/MYu3QT3-u_8",
+        },
+      ]}/>
 
       <GlCards title="Project Documentation">
         {
@@ -278,6 +307,8 @@ function App() {
               link={{
                 href: "docs/Conference_Paper_g41.pdf",
               }}
+              source="src/Conference_Paper_g41.zip"
+              sourcePopup="Download LaTeX Source"
             />
             <MarkdownCard
               title="Final Report"
@@ -285,6 +316,8 @@ function App() {
               link={{
                 href: "docs/Final_Report_g41.pdf",
               }}
+              source="src/Final_Report_g41.zip"
+              sourcePopup="Download LaTeX Source"
             />
 
             <MarkdownCard
@@ -295,7 +328,7 @@ function App() {
               }}
             />
             <MarkdownCard
-              title="Schematic"
+              title="Schematics"
               buttonLabel="Download"
               link={{
                 href: "docs/Schematic_g41.pdf",
@@ -305,7 +338,7 @@ function App() {
               title="CDR Presentation"
               buttonLabel="Download"
               link={{
-                href: "docs/CDR_Presentation_g41.pdf",
+                href: "docs/CDR_Presentation_g41.pptx",
               }}
             />
             <MarkdownCard
@@ -314,6 +347,8 @@ function App() {
               link={{
                 href: "docs/Senior_Design_1_Final_Report_g41.pdf",
               }}
+              source="src/Senior_Design_1_Final_Report_g41.zip"
+              sourcePopup="Download LaTeX Source"
             />
 
             <MarkdownCard
@@ -322,6 +357,8 @@ function App() {
               link={{
                 href: "docs/Divide_and_Conquer_v2_g41.pdf",
               }}
+              source="src/Divide_and_Conquer_v2_g41.zip"
+              sourcePopup="Download LaTeX Source"
             />
             <MarkdownCard
               title="Divide and Conquer (V1)"
@@ -329,6 +366,8 @@ function App() {
               link={{
                 href: "docs/Divide_and_Conquer_v1_g41.pdf",
               }}
+              source="src/Divide_and_Conquer_v1_g41.zip"
+              sourcePopup="Download LaTeX Source"
             />
           </>
         }
@@ -354,49 +393,11 @@ function App() {
               }}
             />
             <MarkdownCard
-              title="Schematic & PCB"
+              title="Schematics & PCB Files"
               github="ucf-aether/electronics"
               buttonLabel="Download"
               link={{
                 href: "src/Electronics_g41.zip",
-              }}
-            />
-            <MarkdownCard
-              title="Final Report"
-              github="ucf-aether/report"
-              buttonLabel="Download"
-              link={{
-                href: "src/Final_Report_g41.zip",
-              }}
-            />
-            <MarkdownCard
-              title="Conference Paper"
-              github="ucf-aether/conference-paper"
-              buttonLabel="Download"
-              link={{
-                href: "src/Conference_Paper_g41.zip",
-              }}
-            />
-            <MarkdownCard
-              title="SD1 Final Report"
-              github="ucf-aether/report/tree/vSD1"
-              buttonLabel="Download"
-              link={{
-                href: "src/Senior_Design_1_Final_Report_g41.zip",
-              }}
-            />
-            <MarkdownCard
-              title="Divide and Conquer (V2)"
-              buttonLabel="Download"
-              link={{
-                href: "src/Divide_and_Conquer_v2_g41.zip",
-              }}
-            />
-            <MarkdownCard
-              title="Divide and Conquer (V1)"
-              buttonLabel="Download"
-              link={{
-                href: "src/Divide_and_Conquer_v1_g41.zip",
               }}
             />
           </>

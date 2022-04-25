@@ -9,6 +9,7 @@ import { Card } from "./Card";
 import { IconButton } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { Markdown } from "gitlanding/tools/Markdown";
 
 import { useDomRect } from "powerhooks/useDomRect";
 
@@ -17,7 +18,8 @@ export type GlProjectCardProps = GlCardProps & {
   badgeLabel?: string;
   badgeColor?: string;
   badgeBackgroundColor?: string;
-  title: string;
+  title?: string;
+  name: string;
   subtitle?: string;
   text?: string;
   classes?: Partial<ReturnType<typeof useStyles>["classes"]>;
@@ -34,6 +36,7 @@ export const PersonCard = memo((props: GlProjectCardProps) => {
     projectImageUrl,
     subtitle,
     title,
+    name,
     badgeLabel,
     link,
     badgeBackgroundColor,
@@ -88,7 +91,7 @@ export const PersonCard = memo((props: GlProjectCardProps) => {
       <div className={classes.footer} style={{ pointerEvents: "auto" }}>
         <Stack direction="row" justifyContent="space-between">
           <Text typo="object heading" className={classes.footerTitle}>
-            {title}
+            {name}
           </Text>
           <div>
             {social?.github && (
@@ -104,14 +107,14 @@ export const PersonCard = memo((props: GlProjectCardProps) => {
           </div>
         </Stack>
         {subtitle !== undefined && (
-          <Text typo="label 2" className={classes.footerSubtitle}>
+          <Markdown className={classes.footerSubtitle}>
             {subtitle}
-          </Text>
+          </Markdown>
         )}
         {text !== undefined && (
-          <Text className={classes.footerText} typo="label 2">
+          <Markdown className={classes.footerText}>
             {text}
-          </Text>
+          </Markdown>
         )}
       </div>
     </Card>
