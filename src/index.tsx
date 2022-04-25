@@ -1,5 +1,6 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { IconButton } from "@mui/material";
+import { css } from "gitlanding";
 import { GlArticle } from "gitlanding/GlArticle";
 import { GlCards } from "gitlanding/GlCards";
 import { GlLogoCard } from "gitlanding/GlCards/GlLogoCard";
@@ -80,6 +81,9 @@ function App() {
       <GlHero
         title="A LoRaWAN connected air quality sensor"
         subTitle="Winner of the Spring 2022 UCF CECS Senior Design Showcase Best ECE Project Award"
+        classes={{
+          imageWrapper: css({ width: "100%" })
+        }}
         illustration={{
           type: "custom component",
           Component: ({ id, onLoad }) => {
@@ -87,17 +91,18 @@ function App() {
             //   setTimeout(onLoad, 50);
             // })
             return (
-              <div id={id}>
+              <div id={id} style={{ width: "100%" }}>
                 <Carousel>
                   {[
+                    "img/aether-sunset.gif",
                     "img/aether_node_1.png", 
                     "img/aetherOpenedUp.jpg"
                   ].map((src, i) => (
                     <img
                       src={src}
-                      width={600}
+                      width="100%"
                       height="auto"
-                      style={{ objectFit: "contain" }}
+                      style={{ width: "100%", maxWidth: 600, objectFit: "contain" }}
                       // Wait for the first image to load
                       onLoad={i === 0 ? onLoad : undefined}
                     />
