@@ -351,7 +351,7 @@ function App() {
               github="ucf-aether/aether-firmware"
               buttonLabel="Download"
               link={{ 
-                href: "src/firmware.zip"
+                href: "src/Firmware_g41.zip"
               }}
             />
             <MarkdownCard
@@ -359,7 +359,7 @@ function App() {
               github="ucf-aether/aether-app"
               buttonLabel="Download"
               link={{ 
-                href: "src/app.zip"
+                href: "src/App_g41.zip"
               }}
             />
             <MarkdownCard
@@ -367,7 +367,7 @@ function App() {
               github="ucf-aether/electronics"
               buttonLabel="Download"
               link={{ 
-                href: "src/electronics.zip"
+                href: "src/Electronics_g41.zip"
               }}
             />
             <MarkdownCard
