@@ -16,6 +16,9 @@ import { PersonCard } from "./PersonCard";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { useTheme } from "gitlanding/theme";
 import { VideoStack } from "./VideoStack";
+import Carousel from "react-material-ui-carousel";
+import { GlImage } from "gitlanding/utils/GlImage";
+import { useEffect } from "react";
 
 function App() {
   return (
@@ -25,8 +28,8 @@ function App() {
           title="Aether Sensor Network"
           customItemStart={
             <IconButton href="https://github.com/ucf-aether" color="inherit">
-              <GitHubIcon /> 
-            </IconButton>   
+              <GitHubIcon />
+            </IconButton>
           }
           links={[
             {
@@ -51,7 +54,7 @@ function App() {
           links={[
             {
               label: "GitHub",
-              href: "https://github.com/ucf-aether"
+              href: "https://github.com/ucf-aether",
             },
             {
               label: "Report",
@@ -63,15 +66,15 @@ function App() {
             },
             {
               label: "App",
-              href: "https://github.com/ucf-aether/aether-app"
+              href: "https://github.com/ucf-aether/aether-app",
             },
             {
               label: "Firmware",
-              href: "https://github.com/ucf-aether/aether-firmware"
+              href: "https://github.com/ucf-aether/aether-firmware",
             },
             {
               label: "Electronics",
-              href: "https://github.com/ucf-aether/aether-electronics"
+              href: "https://github.com/ucf-aether/aether-electronics",
             },
           ]}
         />
@@ -81,8 +84,31 @@ function App() {
         title="A LoRaWAN connected air quality sensor"
         subTitle="Winner of the Spring 2022 UCF CECS Senior Design Showcase Best ECE Project Award"
         illustration={{
-          type: "image",
-          imageSrc: "img/aether_node_1.png",
+          type: "custom component",
+          Component: ({ id, onLoad }) => {
+            // useEffect(() => {
+            //   setTimeout(onLoad, 50);
+            // })
+            return (
+              <div id={id}>
+                <Carousel>
+                  {[
+                    "img/aether_node_1.png", 
+                    "img/aetherOpenedUp.jpg"
+                  ].map((src, i) => (
+                    <img
+                      src={src}
+                      width={600}
+                      height="auto"
+                      style={{ objectFit: "contain" }}
+                      // Wait for the first image to load
+                      onLoad={i === 0 ? onLoad : undefined}
+                    />
+                  ))}
+                </Carousel>
+              </div>
+            );
+          },
         }}
         hasLinkToSectionBellow={true}
         hasIllustrationShadow={true}
@@ -287,16 +313,18 @@ function App() {
         </>
       </GlCards>
 
-      <VideoStack videos={[
-        {
-          title: "Final Presentation Video",
-          src: "https://www.youtube.com/embed/uTsx15xbbo8",
-        },
-        {
-          title: "Final Demo Video",
-          src: "https://www.youtube.com/embed/MYu3QT3-u_8",
-        },
-      ]}/>
+      <VideoStack
+        videos={[
+          {
+            title: "Final Presentation Video",
+            src: "https://www.youtube.com/embed/uTsx15xbbo8",
+          },
+          {
+            title: "Final Demo Video",
+            src: "https://www.youtube.com/embed/MYu3QT3-u_8",
+          },
+        ]}
+      />
 
       <GlCards title="Project Documentation">
         {
