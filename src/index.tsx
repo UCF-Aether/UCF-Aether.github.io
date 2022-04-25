@@ -21,20 +21,16 @@ function App() {
           title="Aether - Air Quality Sensor"
           links={[
             {
+              label: "GitHub",
+              href: "https://github.com/ucf-aether",
+            },
+            {
               label: "Report",
-              href: "https://github.com/ucf-aether/report",
+              href: "docs/Final_Report_g41.pdf",
             },
             {
-              label: "Firmware",
-              href: "https://github.com/ucf-aether/aether-firmware",
-            },
-            {
-              label: "Electronics",
-              href: "https://github.com/ucf-aether/electronics",
-            },
-            {
-              label: "Application",
-              href: "https://github.com/ucf-aether/aether-app",
+              label: "Conference Paper",
+              href: "docs/Conference_Paper_g41.pdf",
             },
           ]}
           enableDarkModeSwitch={true}
@@ -117,9 +113,9 @@ function App() {
           ST STM32WLE5JC, which is an SoC combing an ARM M4
           processor and a LoRa transceiver on the same IC. Packets are sent to The Things Network where
           they are forwarded to Supabase, our backend, which allows data to be displayed on the web application hosted on AWS.`}
-        buttonLabel="Aether GitHub"
+        buttonLabel="Aether Webapp"
         buttonLink={{
-          href: "https://www.github.com/ucf-aether",
+          href: "https://aethersensor.network",
         }}
         illustration={
           <GlIllustration
