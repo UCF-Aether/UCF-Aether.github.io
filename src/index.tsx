@@ -274,6 +274,18 @@ function App() {
         </>
       </GlCards>
 
+      <GlYoutubeVideoSection
+        title="Final Presentation Video"
+        src="https://www.youtube.com/embed/uTsx15xbbo8"
+        hasAnimation={true}
+      />
+
+      <GlYoutubeVideoSection
+        title="Final Demo Video"
+        src="https://www.youtube.com/embed/MYu3QT3-u_8"
+        hasAnimation={true}
+      />
+
       <GlCards
         title="Project Documentation"
       >
