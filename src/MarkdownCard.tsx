@@ -14,6 +14,7 @@ import {
 } from "material-ui-popup-state/hooks";
 import HoverPopover from "material-ui-popup-state/HoverPopover";
 import { memo } from "react";
+import { Card } from "./Card";
 
 export type MarkdownCardProps = GlCardProps & {
   iconUrls?: string[];
@@ -59,7 +60,7 @@ export const MarkdownCard = memo((props: MarkdownCardProps) => {
   });
 
   return (
-    <GlCard link={link} className={cx(classes.root, className)}>
+    <Card className={cx(classes.root, className)}>
       {iconUrls && (
         <div className={classes.iconWrapper}>
           {iconUrls
@@ -156,7 +157,7 @@ export const MarkdownCard = memo((props: MarkdownCardProps) => {
           </div>
         )}
       </Stack>
-    </GlCard>
+    </Card>
   );
 });
 
