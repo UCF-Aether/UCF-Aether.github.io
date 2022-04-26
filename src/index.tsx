@@ -12,36 +12,74 @@ import { GlIllustration } from "gitlanding/GlIllustration";
 import { GlSectionDivider } from "gitlanding/GlSectionDivider";
 import { GlTemplate } from "gitlanding/GlTemplate";
 import { GlYoutubeVideoSection } from "gitlanding/GlYoutubeVideoSection";
+import { useTheme, breakpointsValues } from "gitlanding/theme";
 import { render } from "react-dom";
 import Carousel from "react-material-ui-carousel";
 import { MarkdownCard } from "./MarkdownCard";
 import { PersonCard } from "./PersonCard";
 import { VideoStack } from "./VideoStack";
 
+function CustomHeader() {
+  const theme = useTheme();
+
+  const isCollapsibleMenu =
+    50 + theme.spacing(9) + theme.paddingRightLeft * 2 >
+      theme.windowInnerWidth - 150 ||
+    theme.windowInnerWidth < breakpointsValues.sm;
+
+  return (
+    <GlHeader
+      title="Aether Sensor Network"
+      customItemStart={
+        !isCollapsibleMenu && (
+          <IconButton 
+            href="https://github.com/ucf-aether" 
+            color="inherit" 
+            sx={{ 
+              p: 0,
+              pt: 0,
+              mr: 3,
+              "&:hover": {
+                color: theme.colors.palette.focus.main,
+              }
+            }}
+          >
+            <GitHubIcon />
+          </IconButton>
+        )
+      }
+      classes={{
+        links: css({
+          paddingTop: 8,
+        })
+      }}
+      links={[
+        ...(isCollapsibleMenu
+          ? [
+              {
+                label: "GitHub",
+                href: "https://github.com/ucf-aether",
+              },
+            ]
+          : []),
+        {
+          label: "Report",
+          href: "docs/Final_Report_g41.pdf",
+        },
+        {
+          label: "Conference Paper",
+          href: "docs/Conference_Paper_g41.pdf",
+        },
+      ]}
+      enableDarkModeSwitch={true}
+    />
+  );
+}
+
 function App() {
   return (
     <GlTemplate
-      header={
-        <GlHeader
-          title="Aether Sensor Network"
-          customItemStart={
-            <IconButton href="https://github.com/ucf-aether" color="inherit">
-              <GitHubIcon />
-            </IconButton>
-          }
-          links={[
-            {
-              label: "Report",
-              href: "docs/Final_Report_g41.pdf",
-            },
-            {
-              label: "Conference Paper",
-              href: "docs/Conference_Paper_g41.pdf",
-            },
-          ]}
-          enableDarkModeSwitch={true}
-        />
-      }
+      header={<CustomHeader />}
       headerOptions={{
         position: "sticky",
         isRetracted: "smart",
