@@ -11,13 +11,33 @@ import { GlHero } from "gitlanding/GlHero";
 import { GlIllustration } from "gitlanding/GlIllustration";
 import { GlSectionDivider } from "gitlanding/GlSectionDivider";
 import { GlTemplate } from "gitlanding/GlTemplate";
-import { GlYoutubeVideoSection } from "gitlanding/GlYoutubeVideoSection";
 import { useTheme, breakpointsValues } from "gitlanding/theme";
 import { render } from "react-dom";
 import Carousel from "react-material-ui-carousel";
 import { MarkdownCard } from "./MarkdownCard";
 import { PersonCard } from "./PersonCard";
 import { VideoStack } from "./VideoStack";
+
+const useGDrive =
+  window.location.hostname === "ucf-aether.github.io" ||
+  window.location.hostname === "localhost";
+
+const showcaseGDrive =
+  "https://drive.google.com/file/d/1mgr3Vv2V-z_ATjI-QDkWlpZItwxT4Trd/view?usp=sharing";
+const demoGDrive =
+  "https://drive.google.com/file/d/1IQD7IjkHAlnKKMTdvBaNMZzApVQx_rea/view?usp=sharing";
+const presentationGDrive =
+  "https://drive.google.com/file/d/19qj0tOEeFvn9nhFzz3g0pMZfFWBkX7fv/view?usp=sharing";
+
+const showcaseDownloadUrl = useGDrive
+  ? showcaseGDrive
+  : "videos/SeniorDesignShowcase_g41.mp4";
+const demoDownloadUrl = useGDrive
+  ? demoGDrive
+  : "videos/SeniorDesignFinalDemo_g41.mp4";
+const presentationDownloadUrl = useGDrive
+  ? presentationGDrive
+  : "videos/SeniorDesignFinalPresentation_g41.mp4";
 
 function CustomHeader() {
   const theme = useTheme();
@@ -32,16 +52,16 @@ function CustomHeader() {
       title="Aether Sensor Network"
       customItemStart={
         !isCollapsibleMenu && (
-          <IconButton 
-            href="https://github.com/ucf-aether" 
-            color="inherit" 
-            sx={{ 
+          <IconButton
+            href="https://github.com/ucf-aether"
+            color="inherit"
+            sx={{
               p: 0,
               pt: 0,
               mr: 3,
               "&:hover": {
                 color: theme.colors.palette.focus.main,
-              }
+              },
             }}
           >
             <GitHubIcon />
@@ -51,7 +71,7 @@ function CustomHeader() {
       classes={{
         links: css({
           paddingTop: 8,
-        })
+        }),
       }}
       links={[
         ...(isCollapsibleMenu
@@ -130,10 +150,7 @@ function App() {
             // })
             return (
               <div id={id} style={{ width: "100%" }}>
-                <Carousel
-                  height={475}
-                  interval={5500}
-                >
+                <Carousel height={475} interval={5500}>
                   {[
                     "img/aether_node_1.png",
                     "img/aether-sunset.gif",
@@ -213,17 +230,14 @@ function App() {
         illustrationPosition="right"
       />
 
-      <VideoStack 
+      <VideoStack
         videos={[
           {
             title: "Showcase Video",
             src: "https://www.youtube.com/embed/E9gR2ITvywU",
-            downloadUrl: "videos/SeniorDesignShowcase_g41.mp4",
-          }
+            downloadUrl: showcaseDownloadUrl,
+          },
         ]}
-      />
-      <GlYoutubeVideoSection
-        hasAnimation={true}
       />
 
       <GlCards>
@@ -391,12 +405,12 @@ function App() {
           {
             title: "Final Presentation Video",
             src: "https://www.youtube.com/embed/uTsx15xbbo8",
-            downloadUrl: "videos/SeniorDesignFinalPresentation_g41.mp4",
+            downloadUrl: presentationDownloadUrl,
           },
           {
             title: "Final Demo Video",
             src: "https://www.youtube.com/embed/MYu3QT3-u_8",
-            downloadUrl: "videos/SeniorDesignFinalDemo_g41.mp4",
+            downloadUrl: demoDownloadUrl,
           },
         ]}
       />
