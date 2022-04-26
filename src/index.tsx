@@ -391,7 +391,7 @@ function App() {
           {
             title: "Final Presentation Video",
             src: "https://www.youtube.com/embed/uTsx15xbbo8",
-            downloadUrl: "SeniorDesignFinalPresentation_g41.mp4",
+            downloadUrl: "videos/SeniorDesignFinalPresentation_g41.mp4",
           },
           {
             title: "Final Demo Video",
