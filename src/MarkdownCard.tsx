@@ -3,7 +3,6 @@ import CodeIcon from "@mui/icons-material/Code";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { IconButton, Stack, Typography } from "@mui/material";
 import type { GlCardProps } from "gitlanding/GlCards/GlCard";
-import { GlCard } from "gitlanding/GlCards/GlCard";
 import { breakpointsValues, makeStyles, Text } from "gitlanding/theme";
 import { Markdown } from "gitlanding/tools/Markdown";
 import { GlButton } from "gitlanding/utils/GlButton";

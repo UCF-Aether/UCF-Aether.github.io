@@ -138,6 +138,7 @@ function App() {
                   ].map((src, i) => (
                     <img
                       src={src}
+                      alt={src}
                       width="100%"
                       height="auto"
                       style={{

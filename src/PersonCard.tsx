@@ -38,7 +38,6 @@ export const PersonCard = memo((props: GlProjectCardProps) => {
     text,
     projectImageUrl,
     subtitle,
-    title,
     name,
     badgeLabel,
     link,
@@ -63,6 +62,7 @@ export const PersonCard = memo((props: GlProjectCardProps) => {
     img.onload = () => {
       setImgAspectRatio(img.height / img.width);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectImageUrl]);
 
   const { classes, cx } = useStyles(

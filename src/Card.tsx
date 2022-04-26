@@ -12,7 +12,7 @@ export type GlCardProps = {
 };
 
 export const Card = memo((props: GlCardProps) => {
-    const { children, link, className } = props;
+    const { children, className } = props;
 
     const { classes, cx } = useStyles();
 
