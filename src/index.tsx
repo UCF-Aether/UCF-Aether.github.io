@@ -130,10 +130,13 @@ function App() {
             // })
             return (
               <div id={id} style={{ width: "100%" }}>
-                <Carousel>
+                <Carousel
+                  height={475}
+                  interval={5500}
+                >
                   {[
-                    "img/aether-sunset.gif",
                     "img/aether_node_1.png",
+                    "img/aether-sunset.gif",
                     "img/aetherOpenedUp.jpg",
                   ].map((src, i) => (
                     <img
