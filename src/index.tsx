@@ -213,9 +213,16 @@ function App() {
         illustrationPosition="right"
       />
 
+      <VideoStack 
+        videos={[
+          {
+            title: "Showcase Video",
+            src: "https://www.youtube.com/embed/E9gR2ITvywU",
+            downloadUrl: "videos/SeniorDesignShowcase_g41.mp4",
+          }
+        ]}
+      />
       <GlYoutubeVideoSection
-        title="Showcase Video"
-        src="https://www.youtube.com/embed/E9gR2ITvywU"
         hasAnimation={true}
       />
 
@@ -377,15 +384,19 @@ function App() {
         </>
       </GlCards>
 
+      <GlSectionDivider />
+
       <VideoStack
         videos={[
           {
             title: "Final Presentation Video",
             src: "https://www.youtube.com/embed/uTsx15xbbo8",
+            downloadUrl: "SeniorDesignFinalPresentation_g41.mp4",
           },
           {
             title: "Final Demo Video",
             src: "https://www.youtube.com/embed/MYu3QT3-u_8",
+            downloadUrl: "videos/SeniorDesignFinalDemo_g41.mp4",
           },
         ]}
       />
